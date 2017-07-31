@@ -13,16 +13,17 @@ require "sprockets/railtie"
 
 Bundler.require(*Rails.groups)
 
-module PhotoSchmoto
-  class Application < Rails::Application
-    config.load_defaults 5.1
-    config.generators.system_tests = nil
-    config.generators do |generate|
-    generate.helper false
-    generate.assets false
-    generate.view_specs false
-    generate.helper_specs false
-    generate.routing_specs false
-    generate.controller_specs false
+  module PhotoSchmoto
+    class Application < Rails::Application
+      config.load_defaults 5.1
+      config.generators.system_tests = nil
+      config.generators do |generate|
+      generate.helper false
+      generate.assets false
+      generate.view_specs false
+      generate.helper_specs false
+      generate.routing_specs false
+      generate.controller_specs false
+    end
   end
 end
