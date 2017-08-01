@@ -5,5 +5,4 @@ Feature: Langing page
 
 Scenario: Visit landing page
   When I visit "landing" page
-  Then I should be on "landing" page
-  And I should see "search"
+  Then I should see "search"
