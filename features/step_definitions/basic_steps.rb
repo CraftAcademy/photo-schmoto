@@ -1,5 +1,5 @@
 When(/^I visit "([^"]*)" page$/) do |page_name|
-  visit root_path
+  visit photos_path
 end
 
 Then(/^I should see "([^"]*)"$/) do |content|
@@ -12,10 +12,10 @@ Given(/^The following photos exist$/) do |table|
   end
 end
 
-Then(/^I see a photo Sporty(\d+)$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I see a photo "([^"]*)"$/) do |photo|
+  expect(page).to have_content photo
 end
 
-Then(/^I see price (\d+)$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I see price "([^"]*)"$/) do |price|
+  expect(page).to have_content price
 end
