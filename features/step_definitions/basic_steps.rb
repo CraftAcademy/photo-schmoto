@@ -1,5 +1,8 @@
 When(/^I visit "([^"]*)" page$/) do |page_name|
-  visit photos_path
+
+  page_path = get_path page_name
+  visit page_path
+
 end
 
 Then(/^I should see "([^"]*)"$/) do |content|
@@ -18,4 +21,18 @@ end
 
 Then(/^I see price "([^"]*)"$/) do |price|
   expect(page).to have_content price
+end
+
+
+def get_path(page_name)
+
+  case page_name
+    when 'landing'
+      path = root_path
+    when 'Photos'
+      path = photos_path
+    else
+      raise 'Path missing!'
+  end
+
 end
