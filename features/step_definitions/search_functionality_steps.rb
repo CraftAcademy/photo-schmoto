@@ -1,5 +1,5 @@
 Given(/^that i am on the landing page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_current_path root_path
 end
 
 Given(/^there is a "([^"]*)"$/) do |arg1|
