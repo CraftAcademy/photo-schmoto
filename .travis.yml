@@ -8,3 +8,11 @@ before_script:
   - bundle exec rails db:create db:migrate
 script:
   - bundle exec rails tests
+deploy:
+  provider: heroku
+  app:
+    master: photo-schmoto
+  run:
+    - bundle exec rails db:migrate
+  api_key:
+    secure: s2Kefeb+t5p0Zy99/p2YseHJOyi5aYDIP/hQQgTCQltRKv2K1KyFb4RDYv2i5fr+Vx4RYm7qS+BqNVxNNb9q4W0Lo+tE+vs3BrRbNUGpqSTe1aS7MbOhXjQIuB1sVo8j8omgibHLqAPBUYJ5X2WVEyfJqMQiMfKvFbboil3rI/Q/Bp/7gtJaYl7CRJGL7vaCvqMIkcRF2G57b5+8QKq56nCzDK32+svELTdwqzGD9YMu54piCDrlftLAPn53qJr2GUMhVvPlobqo63097c7Safnf0MXXDREGNQllw2tyCGb+qqRK9J5JRb19f3gCqTpGMdxZSDFYSQLSOzkxXGRTpL2JdbNrnh5TLgNTGGxjN4XwtEKyPirJ8F0dLjEZkQclga+z+ZjwcLbShy9rQDnhdXqQPoI5UmHeGnt6RE7M+iVJMdIbsTsW6fHwjTMMTeK+iISZJRF3abp+8yY/0Zg944HrxMxdNReCtVpwV0t/UHYz3IAJOPVCXhf5N6O3Tc2T44xa1rgiQWOX4Gq8L8iXYqGa5J3NduahTZqhRlEPdV22vQMbEnu4QUtuNYXNlJlOzyW2XYw/4hVnRNytYtr5zd4vNYKmYwqgYqBOfzM5OGlOmCut5u92PTSaPymo4ZNuQTzH1xKUlsoBWEiWzuAfG27DsmE2Qc95NTXWb/l6VxM=
