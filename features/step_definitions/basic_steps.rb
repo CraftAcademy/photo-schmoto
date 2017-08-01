@@ -8,8 +8,7 @@ end
 
 Given(/^The following photos exist$/) do |table|
   table.hashes.each do |hash|
-    Photo.create(hash )
-    #FactoryGirl.create(:photo, hash)
+    FactoryGirl.create(:photo, hash)
   end
 end
 
