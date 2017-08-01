@@ -27,12 +27,12 @@ end
 def get_path(page_name)
 
   case page_name
-    when 'landing'
-      path = root_path
-    when 'Photos'
-      path = photos_path
-    else
-      raise 'Path missing!'
+  when 'landing'
+    path = root_path
+  when 'Photos'
+    path = photos_path
+  else
+    raise 'Path missing!'
   end
 
 end
