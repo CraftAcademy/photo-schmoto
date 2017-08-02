@@ -1,7 +1,6 @@
 When(/^I visit "([^"]*)" page$/) do |page_name|
 
-  page_path = get_path page_name
-  visit page_path
+  visit get_path page_name
 
 end
 
