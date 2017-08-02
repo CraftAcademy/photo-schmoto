@@ -2,7 +2,8 @@
     <div><img src="<%= photo.image_path %>" alt=""></div>
     <div>Title: <%= photo.title %></div>
     <div>Price: <%= photo.price %></div>
-    <%= form_tag do %>
+    <%= form_tag cart_index_path do %>
         <div><input type="submit" id="<%= photo.id %>" value="Add"></input>
+        <%= hidden_field_tag :photo_id, photo.id %>  
     <% end %>
 <% end %>
