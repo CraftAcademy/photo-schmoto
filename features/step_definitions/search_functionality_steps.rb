@@ -1,27 +1,23 @@
 Given(/^that i am on the landing page$/) do
-  expect(page).to have_current_path root_path
+  visit root_path
 end
 
-Given(/^there is a "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^there is a field "([^"]*)"$/) do |q|
+  find_field('search_field').value
 end
 
-Given(/^there is a picture with category "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^save and open page$/) do
+  save_and_open_page
 end
 
-When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
-  pending # Write code here that turns the phrase above into concrete actions
+When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
+  fill_in 'search_field', with: value
 end
 
 When(/^I click "([^"]*)" button$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+  click_button(submit)
 end
 
-When(/^I should be on "([^"]*)" page$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then(/^I should see pictures with category "([^"]*)"$/) do |arg1|
+Then(/^I should not see "([^"]*)"$/) do |arg1|
   pending # Write code here that turns the phrase above into concrete actions
 end
