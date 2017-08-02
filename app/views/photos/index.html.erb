@@ -1,0 +1,5 @@
+<% @photos.each do |photo| %>
+  <div><%= image_tag (photo.image_path) %></div>
+  <div>Title: <%= photo.title %></div>
+  <div>Price: <%= photo.price %></div>
+<% end %>
