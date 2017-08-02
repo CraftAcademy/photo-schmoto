@@ -1,6 +1,8 @@
 <% @photos.each do |photo| %>
-  <div><%= image_tag (photo.image_path) %></div>
-  <div>Title: <%= photo.title %></div>
-  <div>Price: <%= photo.price %></div>
-  <div><%= button_tag(id: photo.id, type: 'button' )%></div>
+    <div><img src="<%= photo.image_path %>" alt=""></div>
+    <div>Title: <%= photo.title %></div>
+    <div>Price: <%= photo.price %></div>
+    <%= form_tag do %>
+        <div><input type="submit" id="<%= photo.id %>" value="Add"></input>
+    <% end %>
 <% end %>

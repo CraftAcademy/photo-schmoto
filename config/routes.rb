@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
   root 'landing#index'
-  resources :photos, only: :index 
+  resources :photos, only: :index
+  resources :cart, only: :create
 end
