@@ -10,6 +10,7 @@ end
 #   save_and_open_page
 #end
 
+
 When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
   fill_in field, with: value
 end
@@ -18,6 +19,6 @@ When(/^I click "([^"]*)" button$/) do |button|
   click_button(button)
 end
 
-Then(/^I should not see "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I should not see "([^"]*)"$/) do |content|
+  expect(page).not_to have_content content
 end

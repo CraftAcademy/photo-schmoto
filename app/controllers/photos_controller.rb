@@ -4,5 +4,6 @@ class PhotosController < ApplicationController
   end
 
   def search
+    @photos = Photo.where("title = ?", params[:search_field])
   end
 end
