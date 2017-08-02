@@ -23,6 +23,9 @@ Then(/^I see price "([^"]*)"$/) do |price|
   expect(page).to have_content price
 end
 
+Then(/^Photos have correct "([^"]*)" src$/) do |image_path|
+  expect(page).to have_xpath("//img[@src='" + image_path + "']")
+end
 
 def get_path(page_name)
 

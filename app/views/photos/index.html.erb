@@ -1,4 +1,5 @@
 <% @photos.each do |photo| %>
-  <%= photo.title %>
-  <%= photo.price %>
+  <div><img src="<%= photo.image_path %>" alt=""></div>
+  <div>Title: <%= photo.title %></div>
+  <div>Price: <%= photo.price %></div>
 <% end %>
