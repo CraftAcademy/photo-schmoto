@@ -6,16 +6,16 @@ Given(/^there is a field "([^"]*)"$/) do |q|
   find_field('search_field').value
 end
 
-Given(/^save and open page$/) do
-  save_and_open_page
-end
+# Given(/^save and open page$/) do
+#   save_and_open_page
+#end
 
 When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
-  fill_in 'search_field', with: value
+  fill_in field, with: value
 end
 
-When(/^I click "([^"]*)" button$/) do |arg1|
-  click_button(submit)
+When(/^I click "([^"]*)" button$/) do |button|
+  click_button(button)
 end
 
 Then(/^I should not see "([^"]*)"$/) do |arg1|
