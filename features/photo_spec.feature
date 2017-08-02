@@ -15,7 +15,6 @@ Feature: As a user,
     Then I see a photo "<title>"
     And I see price "<price>"
     And Photos have correct "<image_path>" src
-
     Examples:
       | title   | price   | image_path                              |
       | Sporty1 | 30      | http://lorempixel.com/400/200/sports/1/ |

@@ -1,6 +1,7 @@
 When(/^I visit "([^"]*)" page$/) do |page_name|
 
-  visit get_path page_name
+  page_path = get_path_from page_name
+  visit page_path
 
 end
 
@@ -26,7 +27,7 @@ Then(/^Photos have correct "([^"]*)" src$/) do |image_path|
   expect(page).to have_xpath("//img[@src='" + image_path + "']")
 end
 
-def get_path(page_name)
+def get_path_from(page_name)
 
   case page_name
   when 'landing'
