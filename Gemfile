@@ -17,7 +17,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'stripe'
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
@@ -25,6 +24,8 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'coveralls', require: false
+  gem 'pry-rails'
+  gem 'pry-byebug'
 end
 
 group :development do
