@@ -5,7 +5,7 @@ Feature: Search Functionality
 
 Background:
   Given that i am on the landing page
-  And there is a field "search-field"
+  And there is a field "search_field"
   Given The following photos exist
     | title   | price   | image_path                              |
     | Sporty1 | 30      | http://lorempixel.com/400/200/sports/1/ |

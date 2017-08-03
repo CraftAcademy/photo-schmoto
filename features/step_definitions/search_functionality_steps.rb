@@ -2,8 +2,8 @@ Given(/^that i am on the landing page$/) do
   visit root_path
 end
 
-Given(/^there is a field "([^"]*)"$/) do |q|
-  find_field('search_field').value
+Given(/^there is a field "([^"]*)"$/) do |field|
+  find_field(field).value
 end
 
 When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
@@ -28,4 +28,4 @@ end
 
 Then(/^I should see an error message saying "([^"]*)"$/) do |content|
   expect(page).to have_content content
-  end
+end

@@ -3,4 +3,4 @@ Rails.application.routes.draw do
   resources :photos, only: :index
 
   get '/search', to: 'photos#search'
-  end
+end
