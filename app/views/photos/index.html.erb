@@ -1,9 +1,4 @@
-
-
-
-<div id="cart_item">10</div>
-
-
+<div id="cart_item"><%= @cart %> </div>
 
 <% @photos.each do |photo| %>
     <div><img src="<%= photo.image_path %>" alt=""></div>

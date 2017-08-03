@@ -4,8 +4,13 @@ When(/^I add "([^"]*)" to cart$/) do |photo_title|
 end
 
 Then(/^Items in cart should be "([^"]*)"$/) do |expected_count|
+  save_and_open_page
   within "#cart_item" do
-    page.should have_content expected_count
+  page.should have_content expected_count
   end
-end
 
+#   within '#my-id' do
+#   find('a', text: 'link-text').trigger('click')
+#   click_link_or_button 'link-text'
+# end
+end
