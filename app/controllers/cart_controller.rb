@@ -3,14 +3,16 @@ class CartController < ApplicationController
     if Cart.last
       cart = Cart.last
     else
-      cart = Cart.create()
-     end
+      cart = Cart.create
+    end
     photo = Photo.find(params[:photo_id])
+    
     if cart.add(photo, photo.price)
-    redirect_to photos_path
-    flash[:notice] = photo.title + " was  successfully added to cart!"
-  else
-    flash[:alert] = "Item not added, try again!"
-  end
+      flash[:notice] = photo.title + " was  successfully added to cart!"
+      redirect_to photos_path
+    else
+      flash[:alert] = "Item not added, try again!"
+      redirect_to photos_path
+    end
   end
 end

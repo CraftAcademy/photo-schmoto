@@ -4,7 +4,7 @@ When(/^I add "([^"]*)" to cart$/) do |photo_title|
 end
 
 Then(/^Items in cart should be "([^"]*)"$/) do |expected_count|
-  within "#cart_item" do
+within "#cart_item" do
   page.should have_content expected_count
   end
 end
