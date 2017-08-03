@@ -14,3 +14,4 @@ Scenario: Add photo to cart
   When I visit "Photos" page
   And I add "Sporty1" to cart
   Then Items in cart should be "1"
+  And I should see "Sporty1 was successfully added to cart!"
