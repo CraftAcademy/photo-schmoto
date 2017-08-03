@@ -3,3 +3,6 @@
   <div>Title: <%= photo.title %></div>
   <div>Price: <%= photo.price %></div>
 <% end %>
+<% if @photos.empty? %>
+  <%="There is no matching picture"%>
+<%end%
