@@ -8,9 +8,4 @@ Then(/^Items in cart should be "([^"]*)"$/) do |expected_count|
   within "#cart_item" do
   page.should have_content expected_count
   end
-
-#   within '#my-id' do
-#   find('a', text: 'link-text').trigger('click')
-#   click_link_or_button 'link-text'
-# end
 end
