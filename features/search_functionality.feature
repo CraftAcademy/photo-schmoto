@@ -5,7 +5,6 @@ Feature: Search Functionality
 
 Background:
   Given that i am on the landing page
-  #And save and open page
   And there is a field "search-field"
   Given The following photos exist
     | title   | price   | image_path                              |
@@ -14,9 +13,7 @@ Background:
     | Sporty3 | 50      | http://lorempixel.com/400/200/sports/3/ |
     | Sporty4 | 60      | http://lorempixel.com/400/200/sports/4/ |
 
-
 Scenario:
-  #And save and open page
   When I fill in "search_field" with "Sporty1"
   And I click "search" button
   Then I should see "Sporty1"

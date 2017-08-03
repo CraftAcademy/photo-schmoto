@@ -6,11 +6,6 @@ Given(/^there is a field "([^"]*)"$/) do |q|
   find_field('search_field').value
 end
 
-# Given(/^save and open page$/) do
-#   save_and_open_page
-#end
-
-
 When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
   fill_in field, with: value
 end
