@@ -9,6 +9,7 @@
   </head>
 
   <body>
+    <div id="cart_item">Cart items: <%= get_cart_items_count %> </div>
     <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
