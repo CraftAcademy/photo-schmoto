@@ -9,10 +9,9 @@ class CartController < ApplicationController
     
     if cart.add(photo, photo.price)
       flash[:notice] = photo.title + " was  successfully added to cart!"
-      redirect_to photos_path
     else
       flash[:alert] = "Item not added, try again!"
-      redirect_to photos_path
     end
+    redirect_to photos_path
   end
 end

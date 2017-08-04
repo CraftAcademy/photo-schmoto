@@ -1,9 +1,6 @@
 module ApplicationHelper
-
   def get_cart_items_count
-    if Cart.last
-      Cart.last.total_unique_items || 0
-    end
+    return Cart.last.total_unique_items if Cart.last
+    0
   end
-
 end
