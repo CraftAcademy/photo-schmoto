@@ -2,10 +2,6 @@ Given(/^that i am on the landing page$/) do
   visit root_path
 end
 
-Given(/^there is a field "([^"]*)"$/) do |field|
-  find_field(field).value
-end
-
 When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
   fill_in field, with: value
 end
