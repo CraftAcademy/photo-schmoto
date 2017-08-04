@@ -39,3 +39,4 @@ def get_path_from(page_name)
   end
 
 end
+

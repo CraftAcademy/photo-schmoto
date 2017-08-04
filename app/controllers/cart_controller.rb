@@ -16,4 +16,10 @@ class CartController < ApplicationController
 
     redirect_to photos_path
   end
+
+  def index
+    @cart_items = Cart.last.shopping_cart_items.all
+    @cart = Cart.last
+  end
+
 end

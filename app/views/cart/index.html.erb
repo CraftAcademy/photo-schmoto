@@ -1,0 +1,15 @@
+<% @cart_items.each do |cart_item| %>
+    <div id="<%= "cart_row_#{cart_item.item.id}" %>">
+      <div><%= cart_item.item.title %></div>
+      <div><%= cart_item.price %></div>
+      <div><%= cart_item.quantity %></div>
+      <div><%= cart_item.item.title %></div>
+    </div>
+<% end %>
+
+<div>Total price: <%= @cart.total%></div>
+
+<%= form_tag cart_index_path do %>
+    <input type="submit" id="sd" value="Buy"></input>
+    <%= hidden_field_tag "sds", 1 %>
+<% end %>

@@ -6,14 +6,8 @@ Given(/^The following photos exist in the cart$/) do |table|
   end
 end
 
-Then(/^I should see "([^"]*)" in the cart$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then(/^I should see the count "([^"]*)" for "([^"]*)"$/) do |arg1, arg2|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then(/^I should see total price "([^"]*)" in the cart$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I should see the count "([^"]*)" for "([^"]*)"$/) do |expected_count, photo_title|
+  within "#cart_row_" + Photo.find_by(title: photo_title).id.to_s do
+    page.should have_content expected_count
+  end
 end
