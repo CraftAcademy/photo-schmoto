@@ -13,13 +13,13 @@ Background:
     | Sporty4 | 60      | http://lorempixel.com/400/200/sports/4/ |
 
 Scenario: Search from the landing page [Happy path]
-  When I fill in "search_field" with "Sporty1"
+  When I fill in "Search for" with "Sporty1"
   And I click "search" button
   Then I should see "Sporty1"
   And I should not see "Sporty2"
   And I should not see "There is no matching picture"
 
 Scenario: Search from the landing page [Sad path]
-  When I fill in the "search_field" with "nature"
+  When I fill in the "Search for" with "nature"
   And I click "search" button
   Then I should see "There is no matching picture"
