@@ -21,11 +21,3 @@ end
 When(/^I fill in the "([^"]*)" with "([^"]*)"$/) do |field, value|
   fill_in field, with: value
 end
-
-When(/^I click on the "([^"]*)" button$/) do |button|
-  click_button(button)
-end
-
-Then(/^I should see an error message saying "([^"]*)"$/) do |content|
-  expect(page).to have_content content
-end

@@ -22,5 +22,5 @@ Scenario: Search from the landing page [Happy path]
 
 Scenario: Search from the landing page [Sad path]
   When I fill in the "search_field" with "nature"
-  And I click on the "search" button
-  Then I should see an error message saying "There is no matching picture"
+  And I click "search" button
+  Then I should see "There is no matching picture"
