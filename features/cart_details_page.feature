@@ -18,7 +18,6 @@ Feature: As a user
   Scenario: View the cart
     When I visit "Cart Detail" page
     Then I should see "Sporty1"
-    #And show me the page
     And I should see the count "1" for "Sporty1"
     And I should see "Sporty2"
     And I should see the count "2" for "Sporty2"
