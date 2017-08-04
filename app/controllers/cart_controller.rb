@@ -1,9 +1,11 @@
 class CartController < ApplicationController
   def create
-    if Cart.last
-      cart = Cart.last
+    if session[:cart_id]
+      cart = Cart.find(session[:cart_id])
+    #get cart from database
     else
       cart = Cart.create
+      session[:cart_id] = cart.id
     end
 
     photo = Photo.find(params[:photo_id])
