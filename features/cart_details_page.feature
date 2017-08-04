@@ -23,4 +23,4 @@ Feature: As a user
     And I should see "Sporty2"
     And I should see the count "2" for "Sporty2"
     And I should see "Total price: 110"
-    And I should see "Buy"
+    And I click "Buy"

@@ -13,6 +13,10 @@ Given(/^The following photos exist$/) do |table|
   end
 end
 
+Then(/^I click "([^"]*)"$/) do |button|
+  click_link_or_button button
+end
+
 Then(/^I see a photo "([^"]*)"$/) do |photo|
   expect(page).to have_content photo
 end
