@@ -6,7 +6,6 @@ class CartController < ApplicationController
       cart = Cart.create
     end
     photo = Photo.find(params[:photo_id])
-    
     if cart.add(photo, photo.price)
       flash[:notice] = photo.title + " was  successfully added to cart!"
     else
