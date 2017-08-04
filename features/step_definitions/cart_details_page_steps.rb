@@ -1,6 +1,9 @@
 Given(/^The following photos exist in the cart$/) do |table|
-  # table is a Cucumber::MultilineArgument::DataTable
-  pending # Write code here that turns the phrase above into concrete actions
+  @cart = Cart.create
+  table.hashes.each do |photo_title|
+    photo = Photo.find_by(photo_title)
+    @cart.add(photo, photo.price)
+  end
 end
 
 Then(/^I should see "([^"]*)" in the cart$/) do |arg1|

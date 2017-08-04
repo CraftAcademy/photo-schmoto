@@ -1,8 +1,6 @@
 When(/^I visit "([^"]*)" page$/) do |page_name|
-
   page_path = get_path_from page_name
   visit page_path
-
 end
 
 Then(/^I should see "([^"]*)"$/) do |content|
@@ -31,9 +29,11 @@ def get_path_from(page_name)
 
   case page_name
   when 'landing'
-    path = root_path
+    root_path
+  when 'Cart Detail'
+    cart_index_path
   when 'Photos'
-    path = photos_path
+    photos_path
   else
     raise 'Path missing!'
   end
