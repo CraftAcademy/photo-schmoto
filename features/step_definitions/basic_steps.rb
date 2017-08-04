@@ -30,7 +30,6 @@ Then(/^Photos have correct "([^"]*)" src$/) do |image_path|
 end
 
 def get_path_from(page_name)
-
   case page_name
   when 'landing'
     root_path
@@ -41,6 +40,4 @@ def get_path_from(page_name)
   else
     raise 'Path missing!'
   end
-
 end
-
