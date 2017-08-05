@@ -18,5 +18,5 @@ Background:
 
 Scenario:
   When I visit "Cart Detail" page
-  And I click "Buy"
+  And I click "Pay with Card"
   Then I should see Payment card in the popup
