@@ -14,9 +14,6 @@
 !/tmp/.keep
 .idea/*
 
-# Ignore secret api key for Stripe payment
-/config/initializers/stripe.rb
-
 /node_modules
 /yarn-error.log
 
