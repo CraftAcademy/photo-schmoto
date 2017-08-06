@@ -1,8 +1,6 @@
 When(/^I visit "([^"]*)" page$/) do |page_name|
-
   page_path = get_path_from page_name
   visit page_path
-
 end
 
 Then(/^I should see "([^"]*)"$/) do |content|
@@ -13,6 +11,10 @@ Given(/^The following photos exist$/) do |table|
   table.hashes.each do |hash|
     FactoryGirl.create(:photo, hash)
   end
+end
+
+Then(/^I click "([^"]*)"$/) do |button|
+  click_link_or_button button
 end
 
 Then(/^I see a photo "([^"]*)"$/) do |photo|
@@ -28,14 +30,14 @@ Then(/^Photos have correct "([^"]*)" src$/) do |image_path|
 end
 
 def get_path_from(page_name)
-
   case page_name
   when 'landing'
-    path = root_path
+    root_path
+  when 'Cart Detail'
+    cart_index_path
   when 'Photos'
-    path = photos_path
+    photos_path
   else
     raise 'Path missing!'
   end
-
 end

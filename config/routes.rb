@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'landing#index'
   resources :photos, only: :index
-  resources :cart, only: :create
+  get '/search', to: 'photos#search'
+  resources :cart, only: [:create, :index]
 end

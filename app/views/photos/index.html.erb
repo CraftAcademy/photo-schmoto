@@ -7,3 +7,6 @@
       <%= hidden_field_tag :photo_id, photo.id %>
     <% end %>
 <% end %>
+<% if @photos.empty? %>
+  <%="There is no matching picture"%>
+<%end%>
