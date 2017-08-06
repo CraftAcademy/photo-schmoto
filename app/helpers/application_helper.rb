@@ -1,6 +1,9 @@
 module ApplicationHelper
   def get_cart_items_count
-    return Cart.last.total_unique_items if Cart.last
-    0
+    if session[:cart_id]
+      return Cart.find(session[:cart_id]).total_unique_items
+    else
+      return 0
+    end
   end
 end
