@@ -6,10 +6,14 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://js.stripe.com/v3/"></script>
   </head>
 
   <body>
-    <div id="cart_item">Cart items: <%= get_cart_items_count %> </div>
+    <div id="cart_item">
+      <a href="<%= cart_index_path %>">
+        Cart items: <%= get_cart_items_count %> </div>
+      </a>
     <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>

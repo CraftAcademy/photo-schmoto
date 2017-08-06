@@ -1,10 +1,16 @@
 class ChargesController < ApplicationController
+
   def new
   end
 
   def create
+
+    if session[:cart_id]
+      @cart = Cart.find(session[:cart_id])
+    end
+
     # Amount in cents
-    @amount = 500
+    @amount = (@cart.total*100).to_i
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
