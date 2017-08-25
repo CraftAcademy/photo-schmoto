@@ -1,5 +1,10 @@
-<%= form_tag("/search", method: "get") do %>
+<%= form_tag("/search", method: "get", class:"search center_align") do %>
   <%= label_tag(:search_field, "Search for:") %>
   <%= text_field_tag(:search_field) %>
+<!--
   <%= submit_tag("search") %>
+-->
+  <%= button_tag(class: "btn waves-effect waves-light", type: "submit") do %>
+    <i class=“material-icons right”>search</i>
+  <% end %>
 <% end %>

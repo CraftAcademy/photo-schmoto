@@ -4,15 +4,33 @@
     <title>PhotoSchmoto</title>
     <%= csrf_meta_tags %>
 
+    <%= stylesheet_link_tag 'application', media: 'all', href: 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.css' %>
+    <%= javascript_include_tag 'application', src: 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js' %>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div id="cart_item">Cart items: <%= get_cart_items_count %> </div>
-    <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Photo Schmoto</a>
+        <ul id="nav-mobile" class="right">
+          <li>
+            <a href="/cart">
+              <span id="cart_item">Cart items: <%= get_cart_items_count %> </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="right">
+      <% flash.each do |key, value| %>
+        <span class="alert alert-<%= key %>"><%= value %></span>
       <% end %>
-    <%= yield %>
+    </div>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

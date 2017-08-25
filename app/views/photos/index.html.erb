@@ -1,12 +1,26 @@
-<% @photos.each do |photo| %>
-    <div><img src="<%= photo.image_path %>" alt=""></div>
-    <div>Title: <%= photo.title %></div>
-    <div>Price: <%= photo.price %></div>
-    <%= form_tag cart_index_path do %>
-      <input type="submit" id="<%= photo.id %>" value="Add"></input>
-      <%= hidden_field_tag :photo_id, photo.id %>
+<div class="section">
+  <div class="row">
+    <% @photos.each do |photo| %>
+      <div class="col s12 m6">
+        <div class="card">
+          <div class="card-image">
+            <img src="<%= photo.image_path %>" alt="">
+            <%= form_tag(cart_index_path) do %>
+              <%= submit_tag("Add", id: photo.id, class: 'btn-floating halfway-fab waves-effect waves-light red') do %>
+
+              <% end %>
+              <%= hidden_field_tag :photo_id, photo.id %>
+            <% end %>
+          </div>
+          <div class="card-content">
+            <span class="card-title">Title: <%= photo.title %></span>
+            <p>Price: <%= photo.price %></p>
+          </div>
+        </div>
+      </div>
     <% end %>
-<% end %>
+  </div>
+</div>
 <% if @photos.empty? %>
   <%="There is no matching picture"%>
 <%end%>
